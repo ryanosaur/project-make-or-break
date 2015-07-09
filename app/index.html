@@ -4,9 +4,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
-  <body>
+  <body ng-controller="GigCtrl">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <div ui-view></div>
+<!--     <div class="container">
+      <div class="row">
+        <div class="medium-6 medium-offset-3">
+          <div class="row">
+            <img class="medium-6" style="display: inline-block" src="http://placehold.it/200x200">
+            <div class="medium-6">
+              <h3>Name{{service.poster}}</h3>
+              <h3>Charity{{service.charity}}</h3>
+              <h3>Amount{{service.amount}}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <h3>Service{{service.name}}</h3>
+            <h3>Service Description{{service.description}}</h3>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
