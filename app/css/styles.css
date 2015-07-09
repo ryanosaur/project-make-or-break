@@ -1,0 +1,54 @@
+h2.MobTitle{
+  text-align: center;
+  color: #FFFFFF;
+}
+.panel{
+  background-color: #18314F;
+  right: 0px;
+  left: 0;
+  position: fixed;
+  color: #FFFFFF;
+  border: 0px;
+  box-shadow: 0px 0px 0px 1px #FFFFFF;
+}
+.body{
+  background-color: #0D0630;
+}
+#listView{
+  background-color: #18314F;
+  top: 100px;
+  left: 10px;
+  right: 10px;
+  height: 1000px;
+}
+/* .serviceBody{
+  float: right;
+} */
+.oneService{
+  background-color: #FFFFFF;
+  left: 10px;
+  right: 10px;
+  margin-top: 40px;
+  height: 160px;
+}
+.userImg{
+  /* margin-top: 10px; */
+  left: 0px;
+  top: auto;
+  width: auto;
+}
+.userImage{
+  top: 0;
+  width: 20%;
+  /* position: fixed; */
+}
+.userName{
+  margin-top: 20px;
+  padding: 0;
+}
+.serviceBody{
+text-align: left;
+}
+.name{
+  height: 20px;
+}

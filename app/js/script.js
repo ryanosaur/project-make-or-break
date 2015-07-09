@@ -1,6 +1,6 @@
 var mob = angular.module("mob", ['ui.router']);
 mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $urlRouterProvider.otherwise('/gig');
+  $urlRouterProvider.otherwise('/list');
   $stateProvider
     .state('gigs', {
       url: "/home",
@@ -11,6 +11,11 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/gig",
       templateUrl: "views/onegig.html",
       controller: "GigCtrl"
+    })
+    .state('list', {
+      url: "/list",
+      templateUrl: "views/listView.html",
+      controller: "listCtrl"
     })
     .state('create', {
       url: "/create",
@@ -44,4 +49,7 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 })
 .controller('CreateCtrl', function() {
   console.log('Create Controller');
+})
+.Controller('listCtrl', function(){
+  console.log("list is hereeee!");
 })
