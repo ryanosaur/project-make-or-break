@@ -10,9 +10,9 @@
   <div class="container">
     <div class="small-12 columns">
   <form>
-    <p><span>I will</span> <input type="text" class="dream-search" placeholder="make an awesome website"> <span>for</span>
-    <p><input type="text" class="dream-search" placeholder="red cross"></p>
-    <select class="verb-dropdown">
+    <p><span>I will</span> <input type="text" class="dream-search" ng-model="makeSomething" placeholder="make an awesome website"> <span>for</span>
+    <p><input type="text" class="dream-search" ng-model="nameOfCharity"placeholder="red cross"></p>
+    <select class="verb-dropdown" ng-model="selecedDollarAmount" ng-options="">
       <option value="" disabled selected>Dollar bills </option>
       <option value="10">10</option>
       <option value="25">25</option>
