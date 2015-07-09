@@ -43,12 +43,18 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     price: "$500"
   }
 })
-.controller('CreateCtrl', function($scope, Gig) {
-  // console.log('Create Controller');
-  // $scope.submit = function() {
-  //   console.log('running');
-  //   $scope.service;
-  // }
+.controller('CreateCtrl', function($scope, $state, Gig) {
+  console.log('Create Controller');
+  $scope.submit = function() {
+    console.log($scope.service);
+    Gig.postGig($scope.service)
+    .success(function(data) {
+      console.log(data);
+      $state.go('list');
+    }).catch(function(error) {
+      console.error(error);
+    })
+  }
 })
 .controller('listCtrl', function($scope, Gig){
   Gig.getAllGigs()
