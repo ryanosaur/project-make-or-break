@@ -33,7 +33,7 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     }
   }
 })
-.controller('NavCtrl', function($scope, $state) {})
+.controller('NavCtrl', function($state) {})
 .controller('GigCtrl', function($scope) {
   $scope.service = {
     name: "Guitar Lessons",
@@ -43,20 +43,18 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     price: "$500"
   }
 })
-.controller('CreateCtrl', function($scope, $state, Gig) {
-  console.log('Create Controller');
+.controller('CreateCtrl', function($scope, Gig) {
   $scope.submit = function() {
-    console.log($scope.service);
     Gig.postGig($scope.service)
     .success(function(data) {
-      console.log(data);
-      $state.go('list');
+      $scope.service = {};
+      alert('Donation request received!');
     }).catch(function(error) {
       console.error(error);
     })
   }
 })
-.controller('listCtrl', function($scope, Gig){
+.controller('listCtrl', function($scope, Gig) {
   Gig.getAllGigs()
   .success(function(data) {
     console.log(data);
