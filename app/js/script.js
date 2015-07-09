@@ -22,7 +22,7 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       requireBase: false
     });
 })
-.constant('BASE_URL', 'http://mob-squad.herokuapp.com')
+.constant('BASE_URL', 'https://mob-squad.herokuapp.com')
 .factory('Gig', function($http, BASE_URL) {
   return {
     getAllGigs: function() {
@@ -58,29 +58,4 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   }).catch(function(error) {
     console.log(error);
   })
-  // $scope.fakeData = [{
-  //   name: "Guitar Lessons",
-  //   poster: "Javier Escobar",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
-  //   charity: "Red Cross",
-  //   price: "$500"
-  // },{
-  //   name: "Guitar Lessons",
-  //   poster: "Javier Escobar",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
-  //   charity: "Red Cross",
-  //   price: "$500"
-  // },{
-  //   name: "Guitar Lessons",
-  //   poster: "Javier Escobar",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
-  //   charity: "Red Cross",
-  //   price: "$500"
-  // },{
-  //   name: "Guitar Lessons",
-  //   poster: "Javier Escobar",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
-  //   charity: "Red Cross",
-  //   price: "$500"
-  // }]
 })
