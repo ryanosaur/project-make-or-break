@@ -9,6 +9,8 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/mob');
 var Service = mongoose.model("Service", {
   serviceType: { type: String, required: true },
   cause: { type: String, required: true },
+  title: { type: String, required: true },
+  name: { type: String, required: true },
   amount: { type: Number, required: true },
   description: { type: String, required: true },
   createdAt: { type: Date, default: Date.now }
