@@ -2,6 +2,7 @@
 logs
 *.log
 wireframe
+.DS_Store
 
 # Runtime data
 pids
