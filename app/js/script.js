@@ -41,7 +41,7 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   console.log('working');
   $scope.service = {
     name: "Guitar Lessons",
-    poster: "Javier",
+    poster: "Javier Escobar",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo, alias voluptate aliquam quasi, consequatur, labore optio excepturi?",
     charity: "Red Cross",
     price: "$500"
@@ -50,6 +50,30 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 .controller('CreateCtrl', function() {
   console.log('Create Controller');
 })
-.Controller('listCtrl', function(){
-  console.log("list is hereeee!");
+.controller('listCtrl', function($scope){
+  $scope.fakeData = [{
+    name: "Guitar Lessons",
+    poster: "Javier Escobar",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
+    charity: "Red Cross",
+    price: "$500"
+  },{
+    name: "Guitar Lessons",
+    poster: "Javier Escobar",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
+    charity: "Red Cross",
+    price: "$500"
+  },{
+    name: "Guitar Lessons",
+    poster: "Javier Escobar",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
+    charity: "Red Cross",
+    price: "$500"
+  },{
+    name: "Guitar Lessons",
+    poster: "Javier Escobar",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo?",
+    charity: "Red Cross",
+    price: "$500"
+  }]
 })
