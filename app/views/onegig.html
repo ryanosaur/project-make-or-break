@@ -1,18 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="medium-6 medium-offset-3">
-      <div class="row">
-        <img class="medium-6" style="display: inline-block" src="http://placehold.it/200x200">
-        <div class="medium-6">
-          <h3>Name{{service.poster}}</h3>
-          <h3>Charity{{servicce.charity}}</h3>
-          <h3>Amount{{service.amount}}</h3>
-        </div>
-      </div>
-      <div class="row">
-        <h3>Service{{service.name}}</h3>
-        <h3>Service Description{{service.description}}</h3>
-      </div>
+<div class="row">
+  <div class="medium-offset-1 medium-6 columns">
+    <br>
+    <br>
+    <div class="row">
+      <h3 class="left">{{service.charity}}</h3>
     </div>
+    <div class="row">
+      <img src="http://placehold.it/500x500">
+    </div>
+  </div>
+  <div class="medium-4 columns">
+    <br><br>
+    <div>
+      <h4 class="left">{{service.poster}} - {{service.name}}</h4>
+      <h4 class="right"></h4>
+    </div>
+    <br><br>
+    <div>
+      <p>{{service.description}}</p>
+      <button class="button success expand">Purchase for {{service.price}}</button>
+    </div>
+
   </div>
 </div>

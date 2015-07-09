@@ -1,0 +1,27 @@
+<div class="row text-center">
+  <div class="large-12 column" id="listView">
+    <div class="row" ng-repeat="data in fakeData">
+      <div class="large-12 columns oneService">
+        <div class="row name">
+          <div class="small-3 columns"></div>
+          <div class="small-9 columns userName">
+            <h3>{{data.poster}}</h3>
+          </div>
+        </div>
+        <div class="row" style="text-align:center;">
+          <div class="small-4 columns userImage">
+            <img class="userImg" src="http://placehold.it/140x100">
+          </div>
+          <div class="small-8 columns serviceBody">
+            {{data.name}}
+            <br>
+            Charity: {{data.charity}}
+            <br>
+            Amount: {{data.price}}
+          </div>
+          <div class="small-2 columns"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
