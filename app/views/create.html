@@ -27,6 +27,25 @@
           </select>
         </div>
       </div>
+      <div class="row">
+        <div class="medium-12 columns">
+          <select class="verb-dropdown" ng-model="service.amount"/>
+            <option value="" disabled selected>Amount</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-12 columns">
+          <label>
+            <input type="text" placeholder="Charity organization" ng-model="service.charity"/>
+          </label>
+        </div>
+      </div>
       <button class="button expand">Submit</button>
     </form>
   </div> 
