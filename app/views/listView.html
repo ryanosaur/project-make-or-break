@@ -1,27 +1,13 @@
-<div class="row text-center">
-  <div class="large-12 column" id="listView">
-    <div class="row" ng-repeat="service in services">
-      <div class="large-12 columns oneService">
-        <div class="row name">
-          <div class="small-3 columns"></div>
-          <div class="small-9 columns userName">
-            <h3>{{service.name}}</h3>
-          </div>
-        </div>
-        <div class="row" style="text-align:center;">
-          <div class="small-4 columns userImage">
-            <img class="userImg th" ui-sref="gig" src="http://placehold.it/140x100">
-          </div>
-          <div class="small-8 columns serviceBody">
-            {{service.title}}
-            <br>
-            Charity: {{service.cause}}
-            <br>
-            Amount: {{service.amount}}
-          </div>
-          <div class="small-2 columns"></div>
-        </div>
-      </div>
+<div class="container">
+  <div class="row card" ng-repeat="service in services">
+    <div class="medium-3 column">
+      <img class="service-img th" ui-sref="gig" src="http://placehold.it/150x100">
+    </div>
+    <div class="medium-9 column">
+      <h3 ui-sref="gig">{{service.title}}</h3>
+      <p class="info">Name: {{service.name}}</p>
+      <p class="info">Charity Type: {{service.serviceType}}</p>
+      <p class="info">Amount: {{service.amount}}</p>
     </div>
   </div>
 </div>
