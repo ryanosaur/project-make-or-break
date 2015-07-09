@@ -23,7 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.get('/', function(req, res) {
+  res.sendfile(app_dir + 'index.html');
+});
+
+app.use('/api', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -55,10 +59,6 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
-});
-
-app.get('/', function(req, res) {
-  res.sendfile(app_dir + 'index.html');
 });
 
 module.exports = app;
