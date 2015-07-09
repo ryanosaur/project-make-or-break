@@ -1,4 +1,4 @@
-<div class="row" ng-controller="listCtrl">
+<div class="row">
   <div class="large-12 column" id="title">
     <div class="panel">
       <h2 class="MobTitle">Mob Team</h2>
@@ -12,12 +12,12 @@
         <div class="row name">
           <div class="small-3 columns"></div>
           <div class="small-9 columns userName">
-            <h3>John Smith</h3>
+            <h3><a ui-sref="gig">John Smith</a></h3>
           </div>
         </div>
         <div class="row" style="text-align:center;">
           <div class="small-4 columns userImage">
-            <img class="userImg" src="http://placehold.it/140x100">
+            <a ui-sref="gig"><img class="userImg" src="http://placehold.it/140x100"></a>
           </div>
           <div class="small-6 columns serviceBody">
             I will read you a bedtime story if you donate $1000.00 to any charity

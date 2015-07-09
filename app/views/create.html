@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <link rel="stylesheet" href="vendor/foundation/css/foundation.css" />
-  <link rel="stylesheet" href="css/create.css" />
-  <div class="container">
-    <div class="small-12 columns">
-  <form>
-    <p><span>I will</span> <input type="text" class="dream-search" ng-model="makeSomething" placeholder="make an awesome website"> <span>for</span>
-    <p><input type="text" class="dream-search" ng-model="nameOfCharity"placeholder="red cross"></p>
-    <select class="verb-dropdown" ng-model="selecedDollarAmount" ng-options="">
-      <option value="" disabled selected>Dollar bills </option>
-      <option value="10">10</option>
-      <option value="25">25</option>
-      <option value="50">50</option>
-      <option value="100">100</option>
-      <option value="200">200</option>
-    </select>.</p>
-
-  </form>
-
+<div class="container">
+  <div class="medium-offset-3 medium-6 columns">
+    <form ng-submit="submit()">
+      <div class="row">
+        <div class="medium-12 columns">
+          <label>
+            <input type="text" placeholder="Service" ng-model="service.service"/>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-12 columns">
+          <label>
+            <input type="text" placeholder="Charity organization" ng-model="service.charity"/>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-12 columns">
+          <select class="verb-dropdown" ng-model="service.amount"/>
+            <option value="" disabled selected>Amount</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+          </select>
+        </div>
+      </div>
+      <button class="button expand">Submit</button>
+    </form>
+  </div> 
 </div>
-  </div>
-<script src="vendor/jquery/dist/jquery.js"></script>
-  <script src="vendor/foundation/js/foundation.js"></script>
-  <script src="vendor/angular/angular.js"></script>
-
-</body>
-</html>

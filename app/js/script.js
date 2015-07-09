@@ -1,19 +1,14 @@
 var mob = angular.module("mob", ['ui.router']);
 mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $urlRouterProvider.otherwise('/list');
+  $urlRouterProvider.otherwise('/');
   $stateProvider
-    .state('gigs', {
-      url: "/home",
-      templateUrl: "views/feed.html",
-      controller: "FeedCtrl"
-    })
     .state('gig', {
       url: "/gig",
       templateUrl: "views/onegig.html",
       controller: "GigCtrl"
     })
     .state('list', {
-      url: "/list",
+      url: "/",
       templateUrl: "views/listView.html",
       controller: "listCtrl"
     })
@@ -27,18 +22,18 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       requireBase: false
     });
 })
-.factory('Gig', function($http) {
+.constant('BASE_URL', 'http://mob-squad.herokuapp.com')
+.factory('Gig', function($http, BASE_URL) {
   return {
-    getOneGig: function() {
-      return $http.get()
+    getAllGigs: function() {
+      return $http.get(BASE_URL + '/api/services');
     }
   }
 })
-.controller('FeedCtrl', function() {
+.controller('NavCtrl', function($scope, $state) {
 
 })
-.controller('GigCtrl', function($scope, Gig) {
-  console.log('working');
+.controller('GigCtrl', function($scope) {
   $scope.service = {
     name: "Guitar Lessons",
     poster: "Javier",
@@ -50,6 +45,11 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 .controller('CreateCtrl', function() {
   console.log('Create Controller');
 })
-.Controller('listCtrl', function(){
-  console.log("list is hereeee!");
+.controller('listCtrl', function($scope, $state, Gig){
+  Gig.getAllGigs()
+  .success(function(data) {
+    console.log('okay');
+  }).catch(function(error) {
+    console.log("You failed idiot")
+  })
 })
