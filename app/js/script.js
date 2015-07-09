@@ -18,10 +18,17 @@ mob.config(function($stateProvider, $urlRouterProvider) {
       controller: "CreateCtrl"
     });
 })
+.factory('Gig', function($http) {
+  return {
+    getOneGig: function() {
+      return $http.get()
+    }
+  }
+})
 .controller('FeedCtrl', function() {
 
 })
-.controller('GigCtrl', function($scope) {
+.controller('GigCtrl', function($scope, Gig) {
   console.log('working');
   $scope.service = {
     name: "Guitar Lessons",
