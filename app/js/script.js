@@ -1,5 +1,5 @@
 var mob = angular.module("mob", ['ui.router']);
-mob.config(function($stateProvider, $urlRouterProvider) {
+mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/gig');
   $stateProvider
     .state('gigs', {
@@ -17,6 +17,10 @@ mob.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/create.html",
       controller: "CreateCtrl"
     });
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
 })
 .controller('FeedCtrl', function() {
 
@@ -25,5 +29,5 @@ mob.config(function($stateProvider, $urlRouterProvider) {
   console.log('working');
 })
 .controller('CreateCtrl', function() {
-
+  console.log('Create Controller');
 })
