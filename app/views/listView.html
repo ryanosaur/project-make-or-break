@@ -1,83 +1,23 @@
-<div class="row" ng-controller="listCtrl">
-  <div class="large-12 column" id="title">
-    <div class="panel">
-      <h2 class="MobTitle">Mob Team</h2>
-    </div>
-  </div>
-</div>
-<div class="row">
+<div class="row text-center">
   <div class="large-12 column" id="listView">
-    <div class="row">
-      <div class="large-12 column oneService">
+    <div class="row" ng-repeat="data in fakeData">
+      <div class="large-12 columns oneService">
         <div class="row name">
           <div class="small-3 columns"></div>
           <div class="small-9 columns userName">
-            <h3>John Smith</h3>
+            <h3>{{data.poster}}</h3>
           </div>
         </div>
         <div class="row" style="text-align:center;">
           <div class="small-4 columns userImage">
             <img class="userImg" src="http://placehold.it/140x100">
           </div>
-          <div class="small-6 columns serviceBody">
-            I will read you a bedtime story if you donate $1000.00 to any charity
-          </div>
-          <div class="small-2 columns"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 column oneService">
-        <div class="row name">
-          <div class="small-3 columns"></div>
-          <div class="small-9 columns userName">
-            <h3>Matt Damon</h3>
-          </div>
-        </div>
-        <div class="row" style="text-align:center;">
-          <div class="small-4 columns userImage">
-            <img class="userImg" src="http://placehold.it/140x100">
-          </div>
-          <div class="small-6 columns serviceBody">
-            I will tickle you silly if you donate $20,000,000 to me.
-          </div>
-          <div class="small-2 columns"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 column oneService">
-        <div class="row name">
-          <div class="small-3 columns"></div>
-          <div class="small-9 columns userName">
-            <h3>Jerry Garcia</h3>
-          </div>
-        </div>
-        <div class="row" style="text-align:center;">
-          <div class="small-4 columns userImage">
-            <img class="userImg" src="http://placehold.it/140x100">
-          </div>
-          <div class="small-6 columns serviceBody">
-            Ill tell you a joke if you give the homeless food.
-          </div>
-          <div class="small-2 columns"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 column oneService">
-        <div class="row name">
-          <div class="small-3 columns"></div>
-          <div class="small-9 columns userName">
-            <h3>Clint Eastwood</h3>
-          </div>
-        </div>
-        <div class="row" style="text-align:center;">
-          <div class="small-4 columns userImage">
-            <img class="userImg" src="http://placehold.it/140x100">
-          </div>
-          <div class="small-6 columns serviceBody">
-            I wont do anything, fuck off.
+          <div class="small-8 columns serviceBody">
+            {{data.name}}
+            <br>
+            Charity: {{data.charity}}
+            <br>
+            Amount: {{data.price}}
           </div>
           <div class="small-2 columns"></div>
         </div>

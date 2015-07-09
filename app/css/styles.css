@@ -6,7 +6,7 @@ h2.MobTitle{
   background-color: #18314F;
   right: 0px;
   left: 0;
-  position: fixed;
+  position: absolute;
   color: #FFFFFF;
   border: 0px;
   box-shadow: 0px 0px 0px 1px #FFFFFF;
@@ -15,11 +15,11 @@ h2.MobTitle{
   background-color: #0D0630;
 }
 #listView{
-  background-color: #18314F;
+  background-color: #333333;
   top: 100px;
   left: 10px;
   right: 10px;
-  height: 1000px;
+  height: 105%;
 }
 /* .serviceBody{
   float: right;
@@ -28,8 +28,10 @@ h2.MobTitle{
   background-color: #FFFFFF;
   left: 10px;
   right: 10px;
+  width: 98%;
   margin-top: 40px;
   height: 160px;
+  margin-right: 5px;
 }
 .userImg{
   /* margin-top: 10px; */
@@ -51,4 +53,5 @@ text-align: left;
 }
 .name{
   height: 20px;
+  text-align: left;
 }
