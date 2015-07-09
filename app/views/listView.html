@@ -10,7 +10,7 @@
         </div>
         <div class="row" style="text-align:center;">
           <div class="small-4 columns userImage">
-            <img class="userImg th" ui-sref="gig" src="http://placehold.it/140x100">
+            <a ui-sref="gig({ id: service._id })"><img class="userImg th" src="http://placehold.it/140x100"></a>
           </div>
           <div class="small-8 columns serviceBody">
             {{service.title}}

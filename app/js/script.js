@@ -3,7 +3,7 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('gig', {
-      url: "/gig",
+      url: "/gig/:id",
       templateUrl: "views/onegig.html",
       controller: "GigCtrl"
     })
@@ -28,20 +28,24 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     getAllGigs: function() {
       return $http.get(BASE_URL + '/api/services');
     },
+    getOneGig: function(service_id) {
+      return $http.get(BASE_URL + '/api/services/' + service_id);
+    },
     postGig: function(service) {
       return $http.post(BASE_URL + '/api/services', service);
     }
   }
 })
 .controller('NavCtrl', function($scope, $state) {})
-.controller('GigCtrl', function($scope) {
-  $scope.service = {
-    name: "Guitar Lessons",
-    poster: "Javier Escobar",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repudiandae eaque, facilis quasi, vitae dolore quam dicta. Ratione, doloribus, odit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis facere, excepturi minus quos! Ipsum sunt sequi, ratione hic aliquid corrupti esse illo, alias voluptate aliquam quasi, consequatur, labore optio excepturi?",
-    charity: "Red Cross",
-    price: "$500"
-  }
+.controller('GigCtrl', function($scope, $state, Gig) {
+  var service_id = $state.params.id;
+  Gig.getOneGig(service_id)
+  .success(function(data){
+    $scope.service = data;
+  })
+  .catch(function(error){
+    console.log(error);
+  });
 })
 .controller('CreateCtrl', function($scope, Gig) {
   // console.log('Create Controller');
