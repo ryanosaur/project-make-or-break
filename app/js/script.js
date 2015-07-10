@@ -43,12 +43,23 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     },
     postGig: function(service) {
       return $http.post(BASE_URL + '/api/services', service);
+    },
+    createUser: function(user) {
+      return $http.post(BASE_URL + '/api/users', user);
     }
   }
 })
 .controller('NavCtrl', function($scope, $state) {})
-.controller('CreateUserCtrl', function() {})
-.controller('LoginCtrl', function() {})
+.controller('CreateUserCtrl', function() {
+  $scope.createUser = function() {
+    console.log($scope.user);
+  }
+})
+.controller('LoginCtrl', function() {
+  $scope.loginUser = function() {
+    console.log($scope.user);
+  }
+})
 .controller('GigCtrl', function($scope, $state, Gig) {
   var service_id = $state.params.id;
   Gig.getOneGig(service_id)
