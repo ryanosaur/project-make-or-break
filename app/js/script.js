@@ -7,6 +7,16 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "views/onegig.html",
       controller: "GigCtrl"
     })
+    .state('login', {
+      url: "/login",
+      templateUrl: "views/loginUser.html",
+      controller: "LoginCtrl"
+    })
+    .state('adduser', {
+      url: "/createUser",
+      templateUrl: "views/createUser.html",
+      controller: "CreateUserCtrl"
+    })
     .state('list', {
       url: "/",
       templateUrl: "views/listView.html",
@@ -33,10 +43,23 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     },
     postGig: function(service) {
       return $http.post(BASE_URL + '/api/services', service);
+    },
+    createUser: function(user) {
+      return $http.post(BASE_URL + '/api/users', user);
     }
   }
 })
 .controller('NavCtrl', function($scope, $state) {})
+.controller('CreateUserCtrl', function() {
+  $scope.createUser = function() {
+    console.log($scope.user);
+  }
+})
+.controller('LoginCtrl', function() {
+  $scope.loginUser = function() {
+    console.log($scope.user);
+  }
+})
 .controller('GigCtrl', function($scope, $state, Gig) {
   var service_id = $state.params.id;
   Gig.getOneGig(service_id)
@@ -47,20 +70,18 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     console.log(error);
   });
 })
-.controller('CreateCtrl', function($scope, $state, Gig) {
-  console.log('Create Controller');
+.controller('CreateCtrl', function($scope, Gig) {
   $scope.submit = function() {
-    console.log($scope.service);
     Gig.postGig($scope.service)
     .success(function(data) {
-      console.log(data);
-      $state.go('list');
+      $scope.service = {};
+      alert('Donation request received!');
     }).catch(function(error) {
       console.error(error);
     })
   }
 })
-.controller('listCtrl', function($scope, Gig){
+.controller('listCtrl', function($scope, Gig) {
   Gig.getAllGigs()
   .success(function(data) {
     console.log(data);

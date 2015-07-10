@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="row">
+    <h1>Welcome {{user || 'Guest'}}</h1>
+  </div>
   <div class="row card" ng-repeat="service in services">
     <div class="medium-3 column">
       <img class="service-img th" ui-sref="gig({ id: service._id })" src="http://placehold.it/150x100">
