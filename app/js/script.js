@@ -7,6 +7,16 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "views/onegig.html",
       controller: "GigCtrl"
     })
+    .state('login', {
+      url: "/login",
+      templateUrl: "views/loginUser.html",
+      controller: "LoginCtrl"
+    })
+    .state('adduser', {
+      url: "/createUser",
+      templateUrl: "views/createUser.html",
+      controller: "CreateUserCtrl"
+    })
     .state('list', {
       url: "/",
       templateUrl: "views/listView.html",
@@ -37,6 +47,8 @@ mob.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   }
 })
 .controller('NavCtrl', function($scope, $state) {})
+.controller('CreateUserCtrl', function() {})
+.controller('LoginCtrl', function() {})
 .controller('GigCtrl', function($scope, $state, Gig) {
   var service_id = $state.params.id;
   Gig.getOneGig(service_id)
